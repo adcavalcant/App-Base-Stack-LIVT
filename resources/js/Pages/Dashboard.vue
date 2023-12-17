@@ -1,12 +1,13 @@
 <template>
-    <h1>Olá Mundo!</h1>
-    <blockquote>{{ title }}</blockquote>
+    <ul>
+        <li v-for="b in breweries.data" :key="b.id">{{ b.name }}</li>
+    </ul>
 </template>
 
 <script>
 export default {
     props: {
-        title: String,
-    }
-}
+        breweries: Object,
+    },
+};
 </script>
