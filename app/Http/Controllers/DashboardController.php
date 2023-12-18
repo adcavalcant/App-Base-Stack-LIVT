@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $breweries = Brewery::withCount('beers')->paginate(15);
+        $breweries = Brewery::has('beers', '>', 0)->withCount('beers')->paginate(10);
 
         return Inertia::render('Dashboard', ['breweries' => $breweries]);
     }
